@@ -11,5 +11,5 @@
 base64_to_df <- function(x) {
   raw_csv <- rawToChar(base64enc::base64decode(x))
 
-  return(read.csv(textConnection(raw_csv), stringsAsFactors = FALSE, sep = ","))
+  return(read.table(textConnection(raw_csv), stringsAsFactors = FALSE, header=TRUE, sep=",", encoding="UTF-8"))
 }
